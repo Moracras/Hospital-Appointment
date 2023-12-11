@@ -5,6 +5,9 @@ import { appointmentData } from "../helpers/Data"
 
 const Home = () => {
   const [appointments, setAppointments] = useState(appointmentData);
+  const handleAdd = (newAppointment) =>{
+    
+  }
   return (
     <main className="text-center mt-2">
       <h1 className="display-5 text-danger">CLARUS HOSPITAL</h1>
