@@ -5,12 +5,11 @@ import AppointmentList from '../components/AppointmentList'
 
 const Home = () => {
   return (
-    <Container className='text-center'>
-      <h1>Clarus Hospital</h1>
-      <h3> Our Doctors</h3>
-      <Doctors/>
-      <AppointmentList/>
-    </Container>
+    <main className="text-center mt-2">
+      <h1 className="display-5 text-danger">CLARUS HOSPITAL</h1>
+      <Doctors />
+      <AppointmentList />
+    </main>
   )
 }
 

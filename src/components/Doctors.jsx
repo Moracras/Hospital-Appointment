@@ -1,34 +1,25 @@
-import React, { useState } from 'react'
-import Card from 'react-bootstrap/Card';
-import { doctorData } from "../helpers/Data"
-import { Container, Row, Col } from 'react-bootstrap';
-import AddModal from './AddModal';
-
-
+import Container from "react-bootstrap/Container"
+import {doctorData} from "../helpers/Data"
+import { Row,Col } from "react-bootstrap"
 
 const Doctors = () => {
-  const [show, setShow] = useState(false);
-
-  const showModal = (doctorName) => {
-    console.log(doctorName);
-    setShow(true)
-  }
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
   return (
-    <Container>
-      <AddModal show={show} setShow={setShow}/>
-      <Row className='justify-content-center'>
-        {doctorData.map((doc) => (
-          <Col xs={12} md={4} onClick={()=>showModal(doc.name)}>
-            <Card className='m-3' >
-              <Card.Img variant="top" src={doc.img} />
-              <Card.Body >
-                <Card.Title className='text-center'>{doc.name}</Card.Title>
-                <Card.Text className='text-center'>
-                  {doc.dep}
-                </Card.Text>
-              </Card.Body>
-            </Card>
-          </Col>
+    <Container className="p-2">
+      <h3 className="display-6 mb-3" style={{ color: "rgb(166, 18, 189)" }}>
+        Our Doctors
+      </h3>
+      <Row>
+        {doctorData.map(({id,img,dep,name})=>(
+          <Col key={id}>
+            <img src={img} alt={name} 
+          className="img-thumbnail doctor-img" />
+            <h5>{name}</h5>
+            <h6>{dep}</h6>
+            
+          <Col/>
+
         ))}
       </Row>
     </Container>

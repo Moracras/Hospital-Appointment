@@ -1,26 +1,12 @@
-import React, { useState } from 'react'
-import {appointmentData} from "../helpers/Data"
+import Container from "react-bootstrap/Container"
 
 const AppointmentList = () => {
-  const [applist, setapplist] = useState(appointmentData)
   return (
-    <div>
-      <h2>Appointment List</h2>
-      {applist.map((app)=>(
-        <div className='d-flex flex-row justify-content-between bg-secondary m-4 p-2'>
-          {console.log(app.day)}
-          <div>
-            <h3>{app.patient}</h3>
-            <h4>{app.doctor}</h4>
-          </div>
-          <div>
-            <p>Date: {app.day.toLocaleDateString()}</p>
-            <p>Time : {app.day.toLocaleTimeString()}</p>
-          </div>
-          <button>DEL</button>
-        </div>
-      ))}
-    </div>
+    <Container className="p-2">
+      <h3 className="display-6 mb-2" style={{ color: "rgb(166, 18, 189)" }}>
+        Appointment List
+      </h3>
+    </Container>
   )
 }
 
